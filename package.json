@@ -1,6 +1,23 @@
 {
   "name": "patchwrk-online",
-  "version": "0.0.0",
+  "version": "1.0.5.6",
+  "description": "angular frontend application for handling a user's bio event data",
+  "license": "MIT",
+  "keywords": [
+    "auth",
+    "events",
+    "guest",
+    "profile",
+    "angular",
+    "tailwindcss"
+  ],
+  "contributors": [
+    "Michael Gokey <michael.gokey.architect@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michael-gokey-architect/patchwrk-online"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

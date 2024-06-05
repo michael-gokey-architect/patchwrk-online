@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    width: 425px;
+    overflow-y: scroll;
+    margin-left: auto !important;
+    min-height: 100%;
+    margin-right: auto !important;
+    border-right: #063771 2px solid;
+    border-left: #063771 2px solid;
+}
