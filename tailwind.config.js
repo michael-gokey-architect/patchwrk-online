@@ -1,9 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-
-
 module.exports = {
   content: ["./src/**/*.{html,js}"],
+
+  plugins: [
+    // require('@tailwindcss/forms'),
+    require('@tailwindcss/typography')
+    // require('tailwindcss/aspect-ratio'),
+    // require('@tailwindcss/container-queries'),
+  ],
+  variants: {},
+
   theme: {
+    // extend: {},
     extend: {
       colors: {
         'theme1': {
@@ -48,11 +56,8 @@ module.exports = {
         }
       },
     }
-},
-variants: {},
-plugins: [
-  require('@tailwindcss/forms'),
-  require('@tailwindcss/typography'),
-  require('tailwind-hamburgers'),
-],
+  }
 }
+
+
+
