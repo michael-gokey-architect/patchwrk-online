@@ -7,7 +7,9 @@
 html, body { height: 100%; }
 body { 
     margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-family: Montserrat, "Helvetica Neue", sans-serif; 
+    font-style: normal;
+    font-weight: 500;
     width: 425px;
     overflow-y: scroll;
     margin-left: auto !important;
