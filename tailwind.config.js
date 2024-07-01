@@ -27,7 +27,7 @@ module.exports = {
              'secondary': 'tomato',
              'base': '#4A4A4A',
           },
-          forest: {
+          'forest': {
             'body': 'White',
             'tertiary'  : 'Amber 50',
             'inactive': 'Amber 100',
