@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { createThemes } = require('tw-colors');
+
 module.exports = {
   content: ["./src/**/*.{html,js}"],
 
@@ -13,28 +15,37 @@ module.exports = {
   theme: {
     // extend: {},
     extend: {
-      colors: {
-        'theme1': {
-          'primary': '#1DA1F2',
-          'secondary': '#14171A',
-          'tertiary': '#657786',
-          'quaternary': '#AAB8C2',
-          'quinary': '#E1E8ED',
-          'senary': '#F5F8FA',
-          'label-titles': '#000000',
-          'font-color': '#ffffff'
-        },
-        'theme2': {
-          'primary': '#FF6347',
-          'secondary': '#8B0000',
-          'tertiary': '#B22222',
-          'quaternary': '#FF4500',
-          'quinary': '#FFA07A',
-          'senary': '#FF7F50',
-          'label-titles': '#000000',
-          'font-color': '#ffffff'
-        }
-      },
+      plugins: [
+        createThemes({
+          'light': { 
+             'primary': 'steelblue',
+             'secondary': 'darkblue',
+             'base': '#F3F3F3',
+          },
+          'dark': { 
+             'primary': 'turquoise',
+             'secondary': 'tomato',
+             'base': '#4A4A4A',
+          },
+          forest: {
+            'body': 'White',
+            'tertiary'  : 'Amber 50',
+            'inactive': 'Amber 100',
+            'secondary': 'Amber 700',
+            'accent-light': 'Amber 800',
+            'trim-light': 'Amber 800',
+            'accent-dark': 'Green 900',
+            'primary': 'Green 950',
+            'trim-dark': 'Green 950',
+            'info': 'Netural 950',
+            'success': '22C55E',
+            'error': 'F97316',
+            'warning': 'DC2626',
+            }
+       }, {
+          produceThemeClass: (themeName) => `theme-${themeName}`
+       })
+      ],
       fontFamily: {
         'theme1': {
           sans: ['Graphik', 'sans-serif'],
