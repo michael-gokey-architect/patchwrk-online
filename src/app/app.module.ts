@@ -11,6 +11,7 @@ import { UserBadgePanelComponent } from './user-badge-panel/user-badge-panel.com
 import { QuestRewardsPanelComponent } from './quest-rewards-panel/quest-rewards-panel.component';
 import { QuestBadgesPanelComponent } from './quest-badges-panel/quest-badges-panel.component';
 import { QuestRewardsPageComponent } from './quest-rewards-page/quest-rewards-page.component';
+import { EventSchedulePageComponent } from './event-schedule-page/event-schedule-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { QuestRewardsPageComponent } from './quest-rewards-page/quest-rewards-pa
     UserBadgePanelComponent,
     QuestRewardsPanelComponent,
     QuestBadgesPanelComponent,
-    QuestRewardsPageComponent
+    QuestRewardsPageComponent,
+    EventSchedulePageComponent
   ],
   imports: [
     BrowserModule,
