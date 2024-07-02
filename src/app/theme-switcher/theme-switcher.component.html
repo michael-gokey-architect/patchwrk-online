@@ -33,6 +33,16 @@
 				</a>
 			</div>
 		</div>
+		<div class="self-baseline">
+			<label for="theme-options">THEME PICKER</label>
+			<div class="theme-options">
+				<select name="theme-options" id="themeoptions" aria-label="ThemeOptions">
+					<option value="forest" [selected]="theme === 'forest'">Forest</option>
+					<option value="racer" [selected]="theme === 'racer'">Left Turn Racer</option>
+					<option value="retro-diner" [selected]="theme === 'retroDiner'">Retro Diner</option>
+				</select>
+			</div>
+		</div>
 	</div>
 </div>
 

@@ -8,8 +8,26 @@ import { Router } from '@angular/router';
 })
 export class ThemeSwitcherComponent {
   userFullName = 'John Bianchi';
+  theme: string = localStorage.getItem('theme') || 'forest';
 
-  constructor(private router: Router) {}
+	constructor(private router: Router) {}
+  
+	ngOnInit() {
+    let switcher = document.getElementById(
+      'themeoptions'
+		)! as HTMLSelectElement;
+    switcher?.addEventListener('change', (e: Event) => {
+			let selectedThemeIndex: number = switcher.options.selectedIndex;
+			let switcherTheme =
+        switcher.options[selectedThemeIndex].getAttribute('value');
+      localStorage.setItem(
+        'theme',
+        switcherTheme || 'forest'
+      );
+			this.theme = localStorage.getItem('theme')!;
+			document.body.dataset['theme'] = switcherTheme!;
+    });
+  }
 
   onLinkedInClick() {
     window.open('https://www.linkedin.com/in/bianchijohn/', '_blank');
