@@ -41,7 +41,22 @@ module.exports = {
             'success': '22C55E',
             'error': 'F97316',
             'warning': 'DC2626',
-            }
+          },
+          leftTurnRacers: {
+            'body': 'White',
+            'tertiary'  : 'Netural 50',
+            'inactive': 'Sky 100',
+            'secondary': 'Yellow 300',
+            'accent-light': 'Red 700',
+            'trim-light': 'Red 700',
+            'accent-dark': 'Sky 500',
+            'primary': 'Sky 600',
+            'trim-dark': 'Sky 600',
+            'info': 'Netural 950',
+            'success': '22C55E',
+            'error': 'F97316',
+            'warning': 'DC2626',
+          },
        }, {
           produceThemeClass: (themeName) => `theme-${themeName}`
        })
