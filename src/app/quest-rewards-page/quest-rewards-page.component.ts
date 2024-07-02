@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./quest-rewards-page.component.css']
 })
 export class QuestRewardsPageComponent {
-
+  title="Quest Rewards";
 }
