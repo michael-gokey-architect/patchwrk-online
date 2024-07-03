@@ -17,7 +17,7 @@ describe('ThemeSwitcherComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create, ThemeSwitcherComponent', () => {
     expect(component).toBeTruthy();
   });
 });
