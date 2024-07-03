@@ -11,6 +11,7 @@ body {
     font-style: normal;
     font-weight: 500;
     width: 425px;
+		height: fit-content;
     overflow-y: scroll;
     margin-left: auto !important;
     min-height: 100%;
