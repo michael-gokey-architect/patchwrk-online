@@ -13,7 +13,7 @@
 
 
 <!-- User Bio -->
-<div class="profile p-7 bg-cover bg-center bg-accent-dark">
+<div class="profile p-7 bg-cover bg-center bg-primary retro-diner:bg-accent-dark">
 	<div class="flex items-center">
 		<img class="w-20" alt="John Bianchi" src="../assets/images/onboarding-images/JohnBianchi.png" />
 		<div class="ml-5">
@@ -49,8 +49,8 @@
 
 
 <!-- About -->
-<div class="about-me bg-tertiary px-8 text-center py-5">
-	<h1 class="text-sm uppercase text-center leading-10 text-info title-text font-bold">About Me:</h1>
+<div class="about-me bg-inactive retro-diner:bg-tertiary px-8 text-center py-5">
+	<h1 class="text-sm uppercase text-center leading-10 title-text font-bold">About Me:</h1>
 	<p class="pb-4 text-sm">
 		Cupcake ipsum dolor sit amet macaroon jelly beans. Wafer danish biscuit shortbread chupa chups. Jelly tart jujubes
 		biscuit cake pastry candy candy danish.
@@ -63,25 +63,23 @@
 
 
 <!-- Links -->
-<div id="links">
-	<div class="flex flex-col w-9/12 mx-auto mt-8 space-y-6 text-body font-semibold">
-		<button type="button" (click)="onLinkedInClick()"
-			class="w-full border-1 border-[#353535] bg-primary truncate shadow-gray text-center py-3 mt-0 mb-0 rounded-full mx-auto">
-			LinkedIn
-		</button>
-		<button type="button" (click)="onPatchWRKClick()"
-			class="w-full border-1 bg-secondary truncate shadow-gray text-center py-3 mt-0 mb-0 rounded-full mx-auto">
-			PatchWRK
-		</button>
-		<button type="button" (click)="onQuestAppClick()"
-			class="w-full border-1 border-trim-dark bg-tertiary truncate shadow-gray text-center text-info py-3 mt-0 mb-0 rounded-full mx-auto">
-			Quest
-		</button>
-		<button type="button"
-			class="w-full border-1 bg-inactive truncate shadow-gray text-center text-tertiary py-3 mt-0 mb-0 rounded-full mx-auto">
-			Organization
-		</button>
-	</div>
+<div id="links" class="pt-8 flex flex-col items-center gap-4">
+	<button type="button" (click)="onLinkedInClick()"
+		class="w-9/12 border-1 border-[#353535] bg-primary truncate shadow-lg text-center text-body py-3 rounded-full">
+		LinkedIn
+	</button>
+	<button type="button" (click)="onPatchWRKClick()"
+		class="w-9/12 border-1 bg-secondary truncate shadow-lg text-center text-body py-3 rounded-full">
+		PatchWRK
+	</button>
+	<button type="button" (click)="onQuestAppClick()"
+		class="w-9/12 border-1 border-trim-dark bg-tertiary truncate shadow-lg text-center text-info py-3 rounded-full">
+		Quest
+	</button>
+	<button type="button"
+		class="w-9/12 border-1 bg-inactive truncate text-center text-info py-3 rounded-full">
+		Organization
+	</button>
 </div>
 
 
@@ -90,12 +88,10 @@
 <div id="badges" class="grid grid-cols-3 gap-4 w-10/12 mx-auto mt-12 mb-10 badges">
 	<div id="badgesQuests" class="flex flex-col items-center">
 		<div
-			class="relative shadow-blue w-24 h-24 flex items-center justify-center rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent-dark to-primary retro-diner:bg-gradient-to-b retro-diner:from-accent-light retro-diner:to-primary border-3 border-info">
+			class="relative shadow-blue w-24 h-24 flex items-center justify-center rounded-full bg-gradient-to-b from-accent-dark to-primary retro-diner:from-accent-light retro-diner:to-primary border-3 border-info">
 			<div class="text-center w-full text-white z-30">
-				<div class="text-center w-full text-white z-30">
 					<a href="#" title="quest badge"> <img class="w-auto h-10 mt-2 mx-auto"
 							src="../assets/images/onboarding-images/quest.png" alt="quest badge" /></a>
-				</div>
 			</div>
 		</div>
 		<p class="text-center text-xs uppercase pt-1 mt-2 w-full">My Quest</p>
@@ -103,7 +99,7 @@
 
 	<div id="badgesMine" class="flex flex-col items-center">
 		<div
-			class="relative shadow-blue w-24 h-24 flex items-center justify-center rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent-dark to-primary retro-diner:bg-gradient-to-b retro-diner:from-accent-light retro-diner:to-primary border-3 border-info">
+			class="relative shadow-blue w-24 h-24 flex items-center justify-center rounded-full bg-gradient-to-b from-accent-dark to-primary retro-diner:from-accent-light retro-diner:to-primary border-3 border-info">
 			<div class="text-center w-full text-white z-30">
 				<a href="#" title="my badges"> <img class="w-auto h-10 mx-auto mt-3"
 						src="../assets/images/onboarding-images/badges.png" alt="badges" /></a>
@@ -114,12 +110,10 @@
 
 	<div id="badgesRewards" class="flex flex-col items-center">
 		<div
-			class="relative shadow-blue w-24 h-24 flex items-center justify-center rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent-dark to-primary retro-diner:bg-gradient-to-b retro-diner:from-accent-light retro-diner:to-primary border-3 border-info">
+			class="relative shadow-blue w-24 h-24 flex items-center justify-center rounded-full bg-gradient-to-b from-accent-dark to-primary retro-diner:from-accent-light retro-diner:to-primary border-3 border-info">
 			<div class="text-center w-full text-white z-30">
-				<div class="text-center w-full text-white z-30">
 					<a href="#" title="rewards badge"> <img class="w-auto h-12 mx-auto mt-3"
 							src="../assets/images/onboarding-images/rewards.png" alt="rewards badge" /> </a>
-				</div>
 			</div>
 		</div>
 		<p class="text-center text-xs uppercase pt-1 mt-2 w-full">My Rewards</p>
