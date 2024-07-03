@@ -3,18 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	:root {
+		--font-family-body: "Montserrat", sans-serif;
+		--font-family-display: "Merienda", cursive;
+	}
+	
+	[data-theme="forest"] {
+		--font-family-body: "Tenor Sans", sans-serif;
+		--font-family-display: "Merienda", cursive;
+	}
+
+	[data-theme="racer"] {
+		--font-family-body: "Montserrat", sans-serif;
+		--font-family-display: "Anton", sans-serif;
+	}
+
+	[data-theme="retro-diner"] {
+		--font-family-body: "Montserrat", sans-serif;
+		--font-family-display: "Roboto Slab", serif;
+	}
+}
 
 html, body { height: 100%; }
 body { 
     margin: 0; 
-    font-family: Montserrat, "Helvetica Neue", sans-serif; 
     font-style: normal;
     font-weight: 500;
     width: 425px;
+		height: fit-content;
     overflow-y: scroll;
     margin-left: auto !important;
     min-height: 100%;
     margin-right: auto !important;
-    border-right: #063771 2px solid;
-    border-left: #063771 2px solid;
 }
