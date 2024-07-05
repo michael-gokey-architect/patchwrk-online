@@ -11,6 +11,7 @@ import { UserBadgePanelComponent } from './user-badge-panel/user-badge-panel.com
 import { QuestRewardsPanelComponent } from './quest-rewards-panel/quest-rewards-panel.component';
 import { QuestBadgesPanelComponent } from './quest-badges-panel/quest-badges-panel.component';
 import { QuestRewardsPageComponent } from './quest-rewards-page/quest-rewards-page.component';
+import { EventSchedulePageComponent } from './event-schedule-page/event-schedule-page.component';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.componen
     QuestRewardsPanelComponent,
     QuestBadgesPanelComponent,
     QuestRewardsPageComponent,
+    EventSchedulePageComponent
     ThemeSwitcherComponent
   ],
   imports: [
