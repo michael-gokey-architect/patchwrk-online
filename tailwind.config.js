@@ -139,7 +139,10 @@ module.exports = {
       },
     }),
   ],
-  theme: {
+	theme: {
+		fontFamily: {
+			sans: ["Montserrat"]
+		},
     extend: {
       spacing: {
         "8xl": "96rem",
