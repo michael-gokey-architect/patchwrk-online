@@ -120,7 +120,7 @@ module.exports = {
         },
       },
       {
-        defaultTheme: "forest",
+        defaultTheme: "grey",
         strict: true,
       }
     ),

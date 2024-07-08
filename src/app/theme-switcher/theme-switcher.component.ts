@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ThemeSwitcherComponent {
   userFullName = 'John Bianchi';
-  theme: string = localStorage.getItem('theme') || 'forest';
+  theme: string = '';
 
 	constructor(private router: Router) {}
   
@@ -22,7 +22,7 @@ export class ThemeSwitcherComponent {
         switcher.options[selectedThemeIndex].getAttribute('value');
       localStorage.setItem(
         'theme',
-        switcherTheme || 'forest'
+        switcherTheme || 'grey'
       );
 			this.theme = localStorage.getItem('theme')!;
 			document.body.dataset['theme'] = switcherTheme!;
