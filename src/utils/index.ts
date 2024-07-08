@@ -30,12 +30,12 @@ type DefaultThemeObject<ThemeName = any> = {
 type ResolvedVariants = Array<{ name: string; definition: string[] }>;
 type ResolvedUtilities = { [selector: string]: Record<string, any> };
 type ResolvedFonts = {
-  [fontName: string]: () => string;
+  [fontName: string]: string;
 };
 type Resolved = {
   variants: ResolvedVariants;
   utilities: ResolvedUtilities;
-  fonts: ResolvedFonts;
+  fontFamily: ResolvedFonts;
 };
 
 export type TwcConfig<ThemeName extends string = string> =
@@ -70,7 +70,7 @@ export const resolveTwcConfig = <ThemeName extends string>(
   const resolved: Resolved = {
     variants: [],
     utilities: {},
-    fonts: {},
+    fontFamily: {},
   };
   const configObject =
 		typeof config === 'function' ? config({ dark, light }) : config;
@@ -105,7 +105,7 @@ export const resolveTwcConfig = <ThemeName extends string>(
       const twcFontVariable = produceCssVariable(safeFontName);
       // add the css variables in "@layer utilities" for the hsl values
 
-			resolved.utilities[cssSelector][twcFontVariable] = [fontValue];
+			resolved.utilities[cssSelector][twcFontVariable] = fontValue;
       addRootUtilities(resolved.utilities, {
         key: twcFontVariable,
         value: fontValue,
@@ -113,9 +113,7 @@ export const resolveTwcConfig = <ThemeName extends string>(
         themeName,
 			});
       // set the dynamic font in tailwind config theme.fonts
-			resolved.fonts[fontName] = () => {
-        return `["var(${twcFontVariable})"]`;
-			};
+			resolved.fontFamily[fontName] = `var(${twcFontVariable})`;
     });
   });
 
@@ -127,8 +125,7 @@ export const createThemeFonts = <ThemeName extends string>(
   options: TwcOptions<ThemeName> = {}
 ) => {
 	const resolved = resolveTwcConfig(config, options);
-	console.log(resolved)
-	console.log(resolved.fonts['body']())
+
 	return plugin(
     ({ addUtilities, addVariant }) => {
       // add the css variables to "@layer utilities" because:
@@ -144,11 +141,11 @@ export const createThemeFonts = <ThemeName extends string>(
     {
       theme: {
         extend: {
-          colors: {
-            'red-900': 'hsla(0, 0%, 0%, 1)',
-          },
+          // colors: {
+          //   'red-900': 'hsla(0, 0%, 0%, 1)',
+          // },
           // @ts-ignore tailwind types are broken
-          fontFamily: resolved.fonts,
+					fontFamily: resolved.fontFamily,
         },
       },
     }
