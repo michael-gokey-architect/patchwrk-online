@@ -25,7 +25,7 @@ import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.componen
     QuestRewardsPanelComponent,
     QuestBadgesPanelComponent,
     QuestRewardsPageComponent,
-    EventSchedulePageComponent
+    EventSchedulePageComponent,
     ThemeSwitcherComponent
   ],
   imports: [

@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
 const { createThemes } = require('tw-colors');
+import { createThemeFonts } from './src/utils/index';
 
 module.exports = {
   content: ["./src/**/*.{html,js}"],
@@ -11,16 +13,6 @@ module.exports = {
     // require('@tailwindcss/container-queries'),
     createThemes(
       {
-        light: {
-          primary: "steelblue",
-          secondary: "darkblue",
-          base: "#F3F3F3",
-        },
-        dark: {
-          primary: "turquoise",
-          secondary: "tomato",
-          base: "#4A4A4A",
-        },
         forest: {
           main: "white",
           tertiary: "#FFFBEB",
@@ -72,24 +64,23 @@ module.exports = {
         strict: true,
       }
     ),
+    createThemeFonts({
+      forest: {
+        body: '"Tenor Sans", sans-serif',
+        display: '"Merienda", cursive',
+      },
+      racer: {
+        body: "Montserrat",
+        display: "Anton",
+      },
+      "retro-diner": {
+        body: "Montserrat",
+        display: "Roboto Slab",
+      },
+    }),
   ],
   theme: {
-    fontFamily: {
-      sans: ["Montserrat", "Helvetica Neue", "sans-serif"],
-    },
-    extend: {
-      fontFamily: {
-        theme1: {
-          sans: ["Graphik", "sans-serif"],
-          serif: ["Merriweather", "serif"],
-        },
-        theme2: {
-          sans: ["Ropo", "sans-serif"],
-          serif: ["Playfair", "serif"],
-        },
-        body: ["var(--font-family-body)", "sans-serif"],
-        display: ["var(--font-family-display)", "serif"],
-      },
+		extend: {
       spacing: {
         "8xl": "96rem",
         "9xl": "128rem",
