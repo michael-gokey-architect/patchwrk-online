@@ -8,23 +8,24 @@ import { Router } from '@angular/router';
 })
 export class ThemeSwitcherComponent {
   userFullName = 'John Bianchi';
-  theme: string = localStorage.getItem('theme') || 'forest';
+  theme: string = localStorage.getItem('theme') || '';
 
 	constructor(private router: Router) {}
   
 	ngOnInit() {
+		if (this.theme) document.body.dataset['theme'] = this.theme;
+		
     let switcher = document.getElementById(
       'themeoptions'
 		)! as HTMLSelectElement;
-    switcher?.addEventListener('change', (e: Event) => {
+    
+		switcher?.addEventListener('change', (e: Event) => {
 			let selectedThemeIndex: number = switcher.options.selectedIndex;
 			let switcherTheme =
-        switcher.options[selectedThemeIndex].getAttribute('value');
-      localStorage.setItem(
-        'theme',
-        switcherTheme || 'forest'
-      );
-			this.theme = localStorage.getItem('theme')!;
+				switcher.options[selectedThemeIndex].getAttribute('value');
+			const selectedTheme = switcherTheme || 'grey';
+      localStorage.setItem('theme', selectedTheme);
+			this.theme = selectedTheme;
 			document.body.dataset['theme'] = switcherTheme!;
     });
   }

@@ -13,6 +13,66 @@ module.exports = {
     // require('@tailwindcss/container-queries'),
     createThemes(
       {
+        patchWRK: {
+          main: "white",
+          tertiary: "#f9fafb",
+          inactive: "#bfdbfe",
+          secondary: "#94a3b8",
+          "accent-light": "#64748b",
+          "trim-light": "#64748b",
+          "accent-dark": "#1d4ed8",
+          primary: "#1e3a8a",
+          "trim-dark": "#1e3a8a",
+          info: "#0a0a0a",
+          success: "#22C55E",
+          error: "#F97316",
+          warning: "#DC2626",
+        },
+        nyias: {
+          main: "white",
+          tertiary: "#f9fafb",
+          inactive: "#e5e5e5",
+          secondary: "#f87171",
+          "accent-light": "#ef4444",
+          "trim-light": "#ef4444",
+          "accent-dark": "#404040",
+          primary: "#171717",
+          "trim-dark": "#171717",
+          info: "#0a0a0a",
+          success: "#22C55E",
+          error: "#F97316",
+          warning: "#DC2626",
+        },
+        dragons: {
+          main: "white",
+          tertiary: "#f9fafb",
+          inactive: "#e9d5ff",
+          secondary: "#facc15",
+          "accent-light": "#eab308",
+          "trim-light": "#eab308",
+          "accent-dark": "#7e22ce",
+          primary: "#581c87",
+          "trim-dark": "#581c87",
+          info: "#0a0a0a",
+          success: "#22C55E",
+          error: "#F97316",
+          warning: "#DC2626",
+        },
+        grey: {
+          main: "white",
+          tertiary: "#FAFAFA",
+          inactive: "#F5F5F5",
+          secondary: "#737373",
+          "accent-light": "#525252",
+          "trim-light": "#525252",
+          "accent-dark": "#262626",
+          primary: "#171717",
+          "trim-dark": "#171717",
+          info: "#0a0a0a",
+          success: "#22C55E",
+          error: "#F97316",
+          warning: "#DC2626",
+        },
         forest: {
           main: "white",
           tertiary: "#FFFBEB",
@@ -60,7 +120,7 @@ module.exports = {
         },
       },
       {
-        defaultTheme: "forest",
+        defaultTheme: "grey",
         strict: true,
       }
     ),
@@ -79,8 +139,11 @@ module.exports = {
       },
     }),
   ],
-  theme: {
-		extend: {
+	theme: {
+		fontFamily: {
+			sans: ["Montserrat"]
+		},
+    extend: {
       spacing: {
         "8xl": "96rem",
         "9xl": "128rem",
@@ -95,6 +158,3 @@ module.exports = {
     },
   },
 };
-
-
-
