@@ -41,6 +41,7 @@
     "lodash.foreach": "^4.5.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "validate-color": "^2.2.4",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {

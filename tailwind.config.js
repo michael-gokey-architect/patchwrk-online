@@ -1,7 +1,133 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
 const { createThemes } = require('tw-colors');
-import { createThemeFonts } from './src/utils/index';
+import { resolveTwcConfig } from './src/utils/index';
+
+const themeFontFamily = {
+	forest: {
+		body: '"Tenor Sans", sans-serif',
+    display: '"Merienda", cursive',
+  },
+  racer: {
+		body: "Montserrat",
+    display: "Anton",
+  },
+  "retro-diner": {
+		body: "Montserrat",
+    display: "Roboto Slab",
+  },
+};
+
+const tailwindColors = {
+	patchWRK: {
+		main: "white",
+		tertiary: "theme('colors.neutral.50')",
+		inactive: "theme('colors.blue.200')",
+		secondary: "theme('colors.slate.400')",
+		"accent-light": "theme('colors.slate.500')",
+		"trim-light": "theme('colors.slate.500')",
+		"accent-dark": "theme('colors.blue.700')",
+		primary: "theme('colors.blue.900')",
+		"trim-dark": "theme('colors.blue.900')",
+		info: "#0a0a0a",
+		success: "#22C55E",
+		error: "#F97316",
+		warning: "#DC2626",
+	},
+	nyias: {
+		main: "white",
+		tertiary: "theme('colors.neutral.50')",
+		inactive: "theme('colors.neutral.200')",
+		secondary: "theme('colors.red.400')",
+		"accent-light": "theme('colors.red.500')",
+		"trim-light": "theme('colors.red.500')",
+		"accent-dark": "theme('colors.neutral.700')",
+		primary: "theme('colors.neutral.900')",
+		"trim-dark": "theme('colors.neutral.900')",
+		info: "#0a0a0a",
+		success: "#22C55E",
+		error: "#F97316",
+		warning: "#DC2626",
+	},
+	dragons: {
+		main: "white",
+		tertiary: "theme('colors.neutral.50')",
+		inactive: "theme('colors.purple.200')",
+		secondary: "theme('colors.yellow.400')",
+		"accent-light": "theme('colors.yellow.500')",
+		"trim-light": "theme('colors.yellow.500')",
+		"accent-dark": "theme('colors.purple.700')",
+		primary: "theme('colors.purple.900')",
+		"trim-dark": "theme('colors.purple.900')",
+		info: "#0a0a0a",
+		success: "#22C55E",
+		error: "#F97316",
+		warning: "#DC2626",
+	},
+  grey: {
+    main: "white",
+    tertiary: "theme('colors.neutral.50')",
+    inactive: "theme('colors.neutral.100')",
+    secondary: "theme('colors.neutral.500')",
+    "accent-light": "theme('colors.neutral.600')",
+    "trim-light": "theme('colors.neutral.600')",
+    "accent-dark": "theme('colors.neutral.800')",
+    primary: "theme('colors.neutral.900')",
+    "trim-dark": "theme('colors.neutral.900')",
+    info: "#0a0a0a",
+    success: "#22C55E",
+    error: "#F97316",
+    warning: "#DC2626",
+  },
+  forest: {
+    main: "white",
+    tertiary: "theme('colors.amber.50')",
+    inactive: "theme('colors.amber.100')",
+    secondary: "theme('colors.amber.700')",
+    "accent-light": "theme('colors.amber.800')",
+    "trim-light": "theme('colors.amber.800')",
+    "accent-dark": "theme('colors.green.900')",
+    primary: "theme('colors.green.950')",
+    "trim-dark": "theme('colors.green.950')",
+    info: "#0a0a0a",
+    success: "#22C55E",
+    error: "#F97316",
+    warning: "#DC2626",
+	},
+	racer: {
+		main: "white",
+		tertiary: "theme('colors.neutral.50')",
+		inactive: "theme('colors.sky.100')",
+		secondary: "theme('colors.yellow.300')",
+		"accent-light": "theme('colors.red.700')",
+		"trim-light": "theme('colors.red.700')",
+		"accent-dark": "theme('colors.sky.500')",
+		primary: "theme('colors.sky.600')",
+		"trim-dark": "theme('colors.sky.600')",
+		info: "#0A0A0A",
+		success: "#22C55E",
+		error: "#F97316",
+		warning: "#DC2626",
+	},
+	"retro-diner": {
+		main: "white",
+		tertiary: "theme('colors.amber.50')",
+		inactive: "theme('colors.rose.200')",
+		secondary: "theme('colors.rose.500')",
+		"accent-light": "theme('colors.orange.400')",
+		"trim-light": "theme('colors.orange.400')",
+		"accent-dark": "theme('colors.teal.600')",
+		primary: "theme('colors.amber.950')",
+		"trim-dark": "theme('colors.amber.950')",
+		info: "#0A0A0A",
+		success: "#22C55E",
+		error: "#F97316",
+		warning: "#DC2626",
+	},
+};
+
+const resolvedColors = resolveTwcConfig(tailwindColors, { styleType: 'colors' })
+const resolvedFonts = resolveTwcConfig(themeFontFamily, { styleType: 'fonts' })
 
 module.exports = {
   content: ["./src/**/*.{html,js}"],
@@ -11,139 +137,36 @@ module.exports = {
     require("@tailwindcss/typography"),
     // require('tailwindcss/aspect-ratio'),
     // require('@tailwindcss/container-queries'),
-    createThemes(
-      {
-        patchWRK: {
-          main: "white",
-          tertiary: "#f9fafb",
-          inactive: "#bfdbfe",
-          secondary: "#94a3b8",
-          "accent-light": "#64748b",
-          "trim-light": "#64748b",
-          "accent-dark": "#1d4ed8",
-          primary: "#1e3a8a",
-          "trim-dark": "#1e3a8a",
-          info: "#0a0a0a",
-          success: "#22C55E",
-          error: "#F97316",
-          warning: "#DC2626",
-        },
-        nyias: {
-          main: "white",
-          tertiary: "#f9fafb",
-          inactive: "#e5e5e5",
-          secondary: "#f87171",
-          "accent-light": "#ef4444",
-          "trim-light": "#ef4444",
-          "accent-dark": "#404040",
-          primary: "#171717",
-          "trim-dark": "#171717",
-          info: "#0a0a0a",
-          success: "#22C55E",
-          error: "#F97316",
-          warning: "#DC2626",
-        },
-        dragons: {
-          main: "white",
-          tertiary: "#f9fafb",
-          inactive: "#e9d5ff",
-          secondary: "#facc15",
-          "accent-light": "#eab308",
-          "trim-light": "#eab308",
-          "accent-dark": "#7e22ce",
-          primary: "#581c87",
-          "trim-dark": "#581c87",
-          info: "#0a0a0a",
-          success: "#22C55E",
-          error: "#F97316",
-          warning: "#DC2626",
-        },
-        grey: {
-          main: "white",
-          tertiary: "#FAFAFA",
-          inactive: "#F5F5F5",
-          secondary: "#737373",
-          "accent-light": "#525252",
-          "trim-light": "#525252",
-          "accent-dark": "#262626",
-          primary: "#171717",
-          "trim-dark": "#171717",
-          info: "#0a0a0a",
-          success: "#22C55E",
-          error: "#F97316",
-          warning: "#DC2626",
-        },
-        forest: {
-          main: "white",
-          tertiary: "#FFFBEB",
-          inactive: "#FEF3C7",
-          secondary: "#B45309",
-          "accent-light": "#92400E",
-          "trim-light": "#92400E",
-          "accent-dark": "#14532D",
-          primary: "#052E16",
-          "trim-dark": "#052E16",
-          info: "#0A0A0A",
-          success: "#22C55E",
-          error: "#F97316",
-          warning: "#DC2626",
-        },
-        racer: {
-          main: "white",
-          tertiary: "#FAFAFA",
-          inactive: "#E0F2FE",
-          secondary: "#FDE047",
-          "accent-light": "#B91C1C",
-          "trim-light": "#B91C1C",
-          "accent-dark": "#0EA5E9",
-          primary: "#0284C7",
-          "trim-dark": "#0284C7",
-          info: "#0A0A0A",
-          success: "#22C55E",
-          error: "#F97316",
-          warning: "#DC2626",
-        },
-        "retro-diner": {
-          main: "white",
-          tertiary: "#FFFBEB",
-          inactive: "#FECDD3",
-          secondary: "#F43F5E",
-          "accent-light": "#FB923C",
-          "trim-light": "#FB923C",
-          "accent-dark": "#0D9488",
-          primary: "#451A03",
-          "trim-dark": "#451A03",
-          info: "#0A0A0A",
-          success: "#22C55E",
-          error: "#F97316",
-          warning: "#DC2626",
-        },
-      },
-      {
-        defaultTheme: "grey",
-        strict: true,
-      }
-    ),
-    createThemeFonts({
-      forest: {
-        body: '"Tenor Sans", sans-serif',
-        display: '"Merienda", cursive',
-      },
-      racer: {
-        body: "Montserrat",
-        display: "Anton",
-      },
-      "retro-diner": {
-        body: "Montserrat",
-        display: "Roboto Slab",
-      },
-    }),
+		// Based off of tw-colors plugin
+		plugin(
+			({ addUtilities, addVariant }) => {
+				// add the css variables to "@layer utilities" because:
+				// - The Base layer does not provide intellisense
+				// - The Components layer might get overriden by tailwind default styles in case of name clash
+				addUtilities(resolvedColors.utilities);
+				addUtilities(resolvedFonts.utilities);
+				// add the theme as variant e.g. "theme-[name]:text-2xl"
+				resolvedColors.variants.forEach(({ name, definition }) =>
+					addVariant(name, definition)
+				);
+			},
+			// extend the styles config
+			{
+				theme: {
+					extend: {
+						// @ts-ignore tailwind types are broken
+						colors: resolvedColors.styles,
+						fontFamily: resolvedFonts.styles,
+					},
+				},
+			}
+		),
   ],
 	theme: {
 		fontFamily: {
 			sans: ["Montserrat"]
 		},
-    extend: {
+		extend: {
       spacing: {
         "8xl": "96rem",
         "9xl": "128rem",
