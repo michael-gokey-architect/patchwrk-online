@@ -9,12 +9,12 @@ const themeFontFamily = {
     display: '"Merienda", cursive',
   },
   racer: {
-		body: "Montserrat",
-    display: "Anton",
+		body: "Montserrat, sans-serif",
+    display: "Anton, sans-serif",
   },
   retroDiner: {
-		body: "Montserrat",
-    display: "Roboto Slab",
+		body: "Montserrat, sans-serif",
+    display: "Roboto Slab, serif",
   },
 };
 
