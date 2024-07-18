@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
-const { createThemes } = require('tw-colors');
 import { resolveTwcConfig } from './src/utils/index';
 
 const themeFontFamily = {
