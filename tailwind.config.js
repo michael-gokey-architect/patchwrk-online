@@ -19,7 +19,7 @@ const themeFontFamily = {
 };
 
 const tailwindColors = {
-	patchWRK: {
+	patchWrk: {
 		main: "white",
 		tertiary: "theme('colors.neutral.50')",
 		inactive: "theme('colors.blue.200')",

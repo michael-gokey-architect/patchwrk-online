@@ -33,7 +33,7 @@ export class ThemeSwitcherComponent {
   onLinkedInClick() {
     window.open('https://www.linkedin.com/in/bianchijohn/', '_blank');
   }
-  onPatchWRKClick() {
+  onPatchWrkClick() {
     window.open('https://www.circlepass.io/patchwrq', '_blank');
   }
   onQuestAppClick() {
