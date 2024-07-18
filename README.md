@@ -21,124 +21,59 @@ https://www.npmjs.com/package/tw-colors
 
 https://github.com/L-Blondy/tw-colors
 
+**SOME NOTES ABOUT THEMES**
 
-```javascript
-      createThemes({
-         'light': { 
-            'primary': 'steelblue',
-            'secondary': 'darkblue',
-            'base': '#F3F3F3',
-         },
-         'dark': { 
-            'primary': 'turquoise',
-            'secondary': 'tomato',
-            'base': '#4A4A4A',
-         },
-      }, {
-         produceThemeClass: (themeName) => `theme-${themeName}`
-      })
-```
-
+**A Typo in the theme() will only break that theme.**
 ```css
-         forest: {
-          'body': 'White',
-          'tertiary'  : 'Amber 50',
-          'inactive': 'Amber 100',
-          'secondary': 'Amber 700',
-          'accent-light': 'Amber 800',
-          'trim-light': 'Amber 800',
-          'accent-dark': 'Green 900',
-          'primary': 'Green 950',
-          'trim-dark': 'Green 950',
-          'info': 'Netural 950',
-          'success': '22C55E',
-          'error': 'F97316',
-          'warning': 'DC2626',
-         },
-         leftTurnRacers: {
-            'body': 'White',
-            'tertiary'  : 'Netural 50',
-            'inactive': 'Sky 100',
-            'secondary': 'Yellow 300',
-            'accent-light': 'Red 700',
-            'trim-light': 'Red 700',
-            'accent-dark': 'Sky 500',
-            'primary': 'Sky 600',
-            'trim-dark': 'Sky 600',
-            'info': 'Netural 950',
-            'success': '22C55E',
-            'error': 'F97316',
-            'warning': 'DC2626',
-         },
-         retroDinner: {
-            'body': 'White',
-            'tertiary'  : 'Netural 50',
-            'inactive': 'Sky 100',
-            'secondary': 'Yellow 300',
-            'accent-light': 'Red 700',
-            'trim-light': 'Red 700',
-            'accent-dark': 'Sky 500',
-            'primary': 'Sky 600',
-            'trim-dark': 'Sky 600',
-            'info': 'Netural 950',
-            'success': '22C55E',
-            'error': 'F97316',
-            'warning': 'DC2626',
-         }
+dragons: {
+    main: "white",
+    tertiary: "theme('colors.neutral.50')",
+    inactive: "theme('colors.purple.290')", //purple.290 isn't a tailwind color
+    secondary: "theme('colors.yellow.400')",
+    "accent-light": "theme('colors.yellow.500')",
+    "trim-light": "theme('colors.yellow.500')",
+    "accent-dark": "theme('colors.purple.700')",
+    primary: "theme('colors.purple.900')",
+    "trim-dark": "theme('colors.purple.900')",
+    info: "#0a0a0a",
+    success: "#22C55E",
+    error: "#F97316",
+    warning: "#DC2626",
+},
 ```
 
-
-
-```javascript
-
-'patchWRK': {
-	'body': 'White',
-	'tertiary'  : 'Netural 50',
-	'inactive': 'Blue 200',
-	'secondary': 'Slate 400',
-	'accent-light': 'Slate 500',
-	'trim-light': 'Slate 500',
-	'accent-dark': 'Blue 700',
-	'primary': 'Blue 900',
-	'trim-dark': 'Blue 900',
-	'info': 'Netural 950',
-	'success': '22C55E',
-	'error': 'F97316',
-	'warning': 'DC2626',
+**Keys are deduped and utilities will look for the most recent value type. Ex. Primary will look for theme() instead of a hex. The grey theme will break.**
+```css
+grey: {
+    main: "white",
+    tertiary: "theme('colors.neutral.50')",
+    inactive: "theme('colors.neutral.100')",
+    secondary: "theme('colors.neutral.500')",
+    "accent-light": "theme('colors.neutral.600')",
+    "trim-light": "theme('colors.neutral.600')",
+    "accent-dark": "theme('colors.neutral.800')",
+    primary: "#FAFAFA", // If primary is a HEX here ...
+    "trim-dark": "theme('colors.neutral.900')",
+    info: "#0a0a0a",
+    success: "#22C55E",
+    error: "#F97316",
+    warning: "#DC2626",
 },
-
-'nyias': {
-	'body': 'White',
-	'tertiary'  : 'Netural 50',
-	'inactive': 'Netural 200',
-	'secondary': 'Red 400',
-	'accent-light': 'Red 500',
-	'trim-light': 'Red 500',
-	'accent-dark': 'Netural 700',
-	'primary': 'Netural 900',
-	'trim-dark': 'Netural 900',
-	'info': 'Netural 950',
-	'success': '22C55E',
-	'error': 'F97316',
-	'warning': 'DC2626',
+forest: {
+    main: "white",
+    tertiary: "theme('colors.amber.50')",
+    inactive: "theme('colors.amber.100')",
+    secondary: "theme('colors.amber.700')",
+    "accent-light": "theme('colors.amber.800')",
+    "trim-light": "theme('colors.amber.800')",
+    "accent-dark": "theme('colors.green.900')",
+    primary: "theme('colors.green.950')", // ... but a theme() here. Primary now expects theme()
+    "trim-dark": "theme('colors.green.950')",
+    info: "#0a0a0a",
+    success: "#22C55E",
+    error: "#F97316",
+    warning: "#DC2626",
 },
-
-'dragons': {
-	'body': 'White',
-	'tertiary'  : 'Netural 50',
-	'inactive': 'Purple 200',
-	'secondary': 'Yellow 400',
-	'accent-light': 'Yellow 500',
-	'trim-light': 'Yellow 500',
-	'accent-dark': 'Purple 700',
-	'primary': 'Purple 900',
-	'trim-dark': 'Purple 900',
-	'info': 'Netural 950',
-	'success': '22C55E',
-	'error': 'F97316',
-	'warning': 'DC2626',
-},
-
 ```
 
 
