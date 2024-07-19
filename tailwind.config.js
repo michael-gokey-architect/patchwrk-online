@@ -54,7 +54,7 @@ const themeFontFamily = {
 };
 
 const tailwindColors = {
-  patchWRK: {
+  patchWrk: {
     main: "#ffffff",
     tertiary: "#f9fafb",
     inactive: "#bfdbfe",
@@ -144,7 +144,7 @@ const tailwindColors = {
     error: "#f97316",
     warning: "#dc2626",
   },
-  "retro-diner": {
+  retroDiner: {
     main: "#ffffff",
     tertiary: "#fffbeb",
     inactive: "#fecdd3",
