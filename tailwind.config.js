@@ -5,19 +5,19 @@ import { resolveTwcConfig } from './src/utils/index';
 const themeFontFamily = {
   patchWrk: {
     body: '"Montserrat", sans-serif',
-    display: '"Quicksand", cursive',
+    display: '"Titan One", sans-serif',
   },
   nyias: {
     body: '"Montserrat", sans-serif',
-    display: '"Quicksand", cursive',
+    display: '"Titan One", sans-serif',
   },
   dragons: {
     body: '"Montserrat", sans-serif',
-    display: '"Quicksand", cursive',
+    display: '"Titan One", sans-serif',
   },
   grey: {
     body: '"Montserrat", sans-serif',
-    display: '"Quicksand", cursive',
+    display: '"Titan One", sans-serif',
   },
   forest: {
     body: '"Tenor Sans", sans-serif',
