@@ -23,9 +23,9 @@ https://github.com/L-Blondy/tw-colors
 
 ## Theme Usage
 
-`npm install color`
-`npm install flat`
-`npm i validate-color --save`
+`npm install color`  
+`npm install flat`  
+`npm i validate-color --save`  
 
 ./src/app/core/plugins/theme.ts
 Create theme.ts file
