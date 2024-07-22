@@ -37,7 +37,7 @@ https://github.com/L-Blondy/tw-colors
 
 ```diff
 +  const plugin = require("tailwindcss/plugin");
-+      import { resolveTwcConfig } from './src/app/core/plugins/theme.ts';
++  import { resolveTwcConfig } from './src/app/core/plugins/theme.ts';
 
 +  const themeFontFamily = {
 +      grey: {
@@ -191,7 +191,7 @@ forest: {
 },
 ```
 
-Apply `class="grey"` or `data-theme=grey` as high up as possible, preferably in the `<body>` 
+Apply `class="grey"` or `data-theme='grey'` as high up as possible, preferably in the `<body>`.
 
 ```diff
 -  <body>
