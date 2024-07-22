@@ -23,15 +23,17 @@ https://github.com/L-Blondy/tw-colors
 
 ## Theme Usage
 
+### Install
 `npm install color`  
 `npm install flat`  
-`npm i validate-color --save`  
+`npm i validate-color --save` 
 
-./src/app/core/plugins/theme.ts
-Create theme.ts file
-Copy and paste the theme.ts file from connections into theme.ts
+### Create Theme Util
+1) Create theme.ts file in ./src/app/core/plugins/theme.ts
+2) Copy and paste the theme.ts file from connections into theme.ts
 
-tailwind.config.js
+### Configure Tailwind
+*tailwind.config.js*
 
 ```diff
 +  const plugin = require("tailwindcss/plugin");
@@ -196,8 +198,8 @@ Apply `class="grey"` or `data-theme=grey` as high up as possible, preferably in 
 +  <body data-theme='grey'>
 ```
 
-**Adding more themes and fonts**
-tailwind.config.js
+### Adding more themes and fonts
+*tailwind.config.js*
 ```diff
   const themeFontFamily = {
       grey: {
