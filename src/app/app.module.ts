@@ -13,6 +13,8 @@ import { QuestBadgesPanelComponent } from './quest-badges-panel/quest-badges-pan
 import { QuestRewardsPageComponent } from './quest-rewards-page/quest-rewards-page.component';
 import { EventSchedulePageComponent } from './event-schedule-page/event-schedule-page.component';
 import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
+import { UserBioHeaderPanelComponent } from './user-bio-header-panel/user-bio-header-panel.component';
+import { UserBioAboutPanelComponent } from './user-bio-about-panel/user-bio-about-panel.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.componen
     QuestBadgesPanelComponent,
     QuestRewardsPageComponent,
     EventSchedulePageComponent,
-    ThemeSwitcherComponent
+    ThemeSwitcherComponent,
+    UserBioHeaderPanelComponent,
+    UserBioAboutPanelComponent
   ],
   imports: [
     BrowserModule,
