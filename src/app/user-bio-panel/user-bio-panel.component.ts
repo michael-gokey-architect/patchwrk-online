@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class UserBioPanelComponent {
 
+
+  // This is old design, this component is not used in the application. 
+  // The new design is in the new bio-header panel component.
 }

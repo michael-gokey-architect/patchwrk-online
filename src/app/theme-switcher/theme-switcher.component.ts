@@ -30,13 +30,13 @@ export class ThemeSwitcherComponent {
     });
   }
 
-  onLinkedInClick() {
-    window.open('https://www.linkedin.com/in/bianchijohn/', '_blank');
-  }
-  onPatchWrkClick() {
-    window.open('https://www.circlepass.io/patchwrq', '_blank');
-  }
-  onQuestAppClick() {
-    window.open('https://www.circlepass.io/quest', '_blank');
-  }
+  // onLinkedInClick() {
+  //   window.open('https://www.linkedin.com/in/bianchijohn/', '_blank');
+  // }
+  // onPatchWrkClick() {
+  //   window.open('https://www.circlepass.io/patchwrq', '_blank');
+  // }
+  // onQuestAppClick() {
+  //   window.open('https://www.circlepass.io/quest', '_blank');
+  // }
 }

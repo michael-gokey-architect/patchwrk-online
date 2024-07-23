@@ -1,23 +1,21 @@
 
 
 <!-- Links section-->
-<div id="links">
-    <div id="QRcode" class="pb-4 pt-12 mt-3">
-      <img class="h-48 p-4 ring-1 rounded-lg mx-auto" alt="QR Code" 
-        src="../assets/images/onboarding-images/de4ZAy.tif.png" />
-    </div>
-    <div class="w-9/12 mx-auto mt-8 space-y-6 text-white">
-      <p><a href="https://www.linkedin.com/in/bianchijohn/" target="blank" title="LinkedIn"> 
-        <button class="w-full ring-4 bg-blue-900 ring-gray-900 truncate shadow-md  text-center py-3 mt-0 mb-0 rounded-full mx-auto">
-          LinkedIn
-        </button></a></p>
-      <p><a href="https://www.circlepass.io/patchwrq" target="blank" title="PatchWRQ Site"> 
-        <button class="w-full ring-4 bg-blue-900 ring-gray-900 truncate shadow-md  text-center py-3 mt-0 mb-0 rounded-full mx-auto">
-          PatchWRQ Site
-        </button></a></p>
-      <p><a href="https://www.circlepass.io/quest" target="blank" title="Quest App"> 
-        <button class="w-full ring-4 bg-blue-900 ring-gray-900 truncate shadow-md  text-center py-3 mt-0 mb-0 rounded-full mx-auto">
-          Quest App
-        </button></a></p>
-    </div>
-  </div>
+<div class="pt-8 flex flex-col items-center gap-4">
+	<button type="button" (click)="onLinkedInClick()"
+		class="w-9/12 border-1 border-trimDark bg-primary truncate shadow-lg text-center text-infoLight py-3 rounded-full">
+		LinkedIn
+	</button>
+	<button type="button" (click)="onPatchWrkClick()"
+		class="w-9/12 border-1 bg-secondary truncate shadow-lg text-center text-infoLight py-3 rounded-full dragons:text-primary racer:text-info duke:text-info raven:text-info roseAmber:text-info">
+		PatchWrk
+	</button>
+	<button type="button" (click)="onQuestAppClick()"
+		class="w-9/12 border-1 border-trimDark bg-tertiary truncate shadow-lg text-center text-info py-3 rounded-full">
+		Quest
+	</button>
+	<button type="button"
+		class="w-9/12 border-1 bg-inactive truncate text-center text-info py-3 rounded-full cursor-default">
+		Organization
+	</button>
+</div>

@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-// class='forest'
+// Plugin your cleaned up code from theme switcher here
+// so the select dropwdown will be displayed in the header, 
+// instead of on the Bio Header Panel
+
+
+
 }
