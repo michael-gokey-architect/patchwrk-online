@@ -63,7 +63,6 @@ export interface TwcOptions<ThemeName extends string = string> {
 
 /**
  * Resolves the variants, base and styles to inject in the plugin
- * Library authors might use this function instead of the createThemes function
  */
 export const resolveTwcConfig = <ThemeName extends string>(
   config: TwcConfig<ThemeName> = emptyConfig,
@@ -84,13 +83,17 @@ export const resolveTwcConfig = <ThemeName extends string>(
   const configObject =
     typeof config === 'function' ? config({ dark, light }) : config;
 
+  /*
+   * Generates class and variant definitions.
+   * Variant definitions are found in generateVariantDefinitions function.
+   */
   // @ts-ignore forEach types fail to assign themeName
   Object.entries(configObject).forEach(([themeName, styles]: [themeName: ThemeName, styles: NestedStyles]) => {
       const themeClassName = produceThemeClass(themeName);
       const themeVariant = produceThemeVariant(themeName);
 
       const flatStyles = flattenStyles(styles);
-      // set the resolved.variants
+      
       resolved.variants.push({
         name: themeVariant,
         // tailwind will generate only the first matched definition
@@ -102,20 +105,29 @@ export const resolveTwcConfig = <ThemeName extends string>(
       });
 
       const cssSelector = `.${themeClassName},[data-theme="${themeName}"]`;
-      // set the color-scheme css property
+      
       resolved.utilities[cssSelector] = styles[SCHEME]
         ? { 'color-scheme': styles[SCHEME] }
         : {};
 
+			/*
+			 * Resolves styles based on types
+			 * (valid colors vs Tailwind colors vs fonts).
+			 * Styles output is the same object structure as what tailwind.config
+			 * expects and uses variables such as (--tw-primary).
+			 * Also resolves utilities that assign values to variables used in styles.
+			 */
       Object.entries(flatStyles).forEach(
         ([styleName, styleValue]: [styleName: string, styleValue: string]) => {
-          // this case was handled above
           if ((styleName as any) === SCHEME) return;
           const safeStyleName = escapeChars(styleName, '/');
 
-					const twcStyleVariable = produceCssVariable(safeStyleName);
-					
-					if (styleType === 'colors' && validateColor(styleValue)) {
+          const twcStyleVariable = produceCssVariable(safeStyleName);
+
+          /*
+           * Valid CSS colors generate hsl values
+           */
+          if (styleType === 'colors' && validateColor(styleValue)) {
             let [h, s, l, defaultAlphaValue]: HslaArray = [0, 0, 0, 1];
             try {
               [h, s, l, defaultAlphaValue] = toHslaArray(styleValue);
@@ -155,7 +167,10 @@ export const resolveTwcConfig = <ThemeName extends string>(
               });
             }
 
-            resolved.styles[styleName] = ({ opacityVariable, opacityValue }) => {
+            resolved.styles[styleName] = ({
+              opacityVariable,
+              opacityValue,
+            }) => {
               // if the opacity is set  with a slash (e.g. bg-primary/90), use the provided value
               if (!isNaN(+opacityValue)) {
                 return `hsl(var(${twcStyleVariable}) / ${opacityValue})`;
@@ -168,22 +183,15 @@ export const resolveTwcConfig = <ThemeName extends string>(
                 return `hsl(var(${twcStyleVariable}) / var(${twcOpacityVariable}, var(${opacityVariable})))`;
               }
               return `hsl(var(${twcStyleVariable}) / var(${twcOpacityVariable}, 1))`;
-						};
-					} else if (styleType === 'colors') {
-            // const colorValue = 'colors.' + styleValue.toLowerCase().replace(' ', '.');
-            resolved.utilities[cssSelector][twcStyleVariable] = styleValue;
+            };
+          }
 
-            addRootUtilities(resolved.utilities, {
-              key: twcStyleVariable,
-              value: styleValue,
-              defaultTheme,
-              themeName,
-            });
-
-						resolved.styles[styleName] = `var(${twcStyleVariable})`;
-					}
-					
-          if (styleType !== 'colors') {
+          /*
+           * Tailwind colors can safely be stored in a variable as is since
+           * Tailwind processes these colors and generates the respective HEX.
+					 * Fonts can also be stored as is.
+           */
+          if (styleType !== 'colors' || ( styleType === 'colors' && !validateColor(styleValue))) {
             resolved.utilities[cssSelector][twcStyleVariable] = styleValue;
 
             addRootUtilities(resolved.utilities, {
@@ -193,8 +201,9 @@ export const resolveTwcConfig = <ThemeName extends string>(
               themeName,
             });
           }
-          // set the dynamic style in tailwind config theme.styles
-          if (styleType === 'fonts') resolved.styles[styleName] = `var(${twcStyleVariable})`;
+
+          if (styleType === 'fonts')
+            resolved.styles[styleName] = `var(${twcStyleVariable})`;
         }
       );
     }
