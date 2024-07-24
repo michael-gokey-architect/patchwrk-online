@@ -1,0 +1,57 @@
+[
+    {
+        "key_id": 82,
+        "user_id": 127,
+        "link_type": "S",
+        "link_active": "Y",
+        "url_label": "LinkedIn",
+        "url_link": "https://www.linkedin.com/in/james-nettles-5957b9a/",
+        "creation_date": "2024-07-18T23:05:55.323",
+        "last_update_date": "2024-07-18T23:05:55.323",
+        "last_update_by": 0
+    },
+    {
+        "key_id": 83,
+        "user_id": 127,
+        "link_type": "S",
+        "link_active": "Y",
+        "url_label": "Facebook",
+        "url_link": "https://www.facebook.com/james.nettles",
+        "creation_date": "2024-07-18T23:07:07.62",
+        "last_update_date": "2024-07-18T23:07:07.62",
+        "last_update_by": 0
+    },
+    {
+        "key_id": 88,
+        "user_id": 127,
+        "link_type": "W",
+        "link_active": "Y",
+        "url_label": "Company Profile",
+        "url_link": "https://www.circlepass.io/advisory-team-2",
+        "creation_date": "2024-07-24T17:26:33.067",
+        "last_update_date": "2024-07-24T17:26:33.067",
+        "last_update_by": 0
+    },
+    {
+        "key_id": 89,
+        "user_id": 127,
+        "link_type": "W",
+        "link_active": "Y",
+        "url_label": "DragonCon Professionals Profile",
+        "url_link": "https://www.dragoncon.org/people-to-see-2/professionals/#N",
+        "creation_date": "2024-07-24T17:28:17.023",
+        "last_update_date": "2024-07-24T17:28:17.023",
+        "last_update_by": 0
+    },
+    {
+        "key_id": 90,
+        "user_id": 127,
+        "link_type": "S",
+        "link_active": "Y",
+        "url_label": "instagram",
+        "url_link": "https://www.instagram.com/jpnettlesauthor/",
+        "creation_date": "2024-07-24T17:29:28.92",
+        "last_update_date": "2024-07-24T17:29:28.92",
+        "last_update_by": 0
+    }
+]
